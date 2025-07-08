@@ -736,6 +736,19 @@ type Config struct {
 	// autoSessionTicketKeys is like sessionTicketKeys but is owned by the
 	// auto-rotation logic. See Config.ticketKeys.
 	autoSessionTicketKeys []ticketKey
+
+	// Serpent configuration. If Serpent.Enabled is true, traffic will be
+	// obfuscated using the Serpent protocol.
+	Serpent SerpentConfig
+}
+
+// Serpent specific configuration fields
+type SerpentConfig struct {
+	// Enabled, if true, enables Serpent obfuscation for this connection.
+	Enabled bool
+	// PSK is a pre-shared key used to derive initial Serpent secrets.
+	// In a real scenario, this would be negotiated more securely or derived.
+	PSK []byte
 }
 
 const (
