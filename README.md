@@ -30,7 +30,7 @@ package main
 import (
     "fmt"
     "log"
-    "github.com/gQUIC/Serpent"
+    serpent "github.com/gQUIC/Serpent"
 )
 
 func main() {
